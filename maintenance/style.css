@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Inter", Arial, sans-serif;
+  color: #f7fbff;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(68, 160, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 82% 22%, rgba(220, 176, 71, 0.18), transparent 28%),
+    linear-gradient(135deg, #07101f 0%, #0b1730 48%, #101827 100%);
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+.maintenance-page {
+  width: min(1180px, calc(100% - 40px));
+  height: 100vh;
+  height: 100svh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 54px);
+  padding: clamp(22px, 5vh, 44px) 0;
+}
+
+.notice {
+  position: relative;
+  z-index: 2;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(22px, 5vh, 34px);
+}
+
+.brand img {
+  width: clamp(48px, 7vh, 62px);
+  height: clamp(48px, 7vh, 62px);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 34px rgba(0, 0, 0, 0.34);
+}
+
+.brand-kicker {
+  color: #97a9c6;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.brand h1 {
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.15;
+}
+
+.status-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(14px, 3vh, 20px);
+  padding: 9px 13px;
+  border: 1px solid rgba(220, 176, 71, 0.34);
+  border-radius: 999px;
+  color: #f8d98b;
+  background: rgba(220, 176, 71, 0.1);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.status-badge span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f8c86b;
+  box-shadow: 0 0 18px rgba(248, 200, 107, 0.8);
+}
+
+.notice-content {
+  max-width: 710px;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: #74c8ff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.notice-content h2 {
+  max-width: 680px;
+  color: #ffffff;
+  font-size: clamp(2.15rem, 5.2vw, 4.55rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.notice-content p:last-child {
+  max-width: 640px;
+  margin-top: clamp(14px, 3vh, 20px);
+  color: #c4d2e8;
+  font-size: clamp(0.94rem, 1.4vw, 1.06rem);
+  line-height: 1.68;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: clamp(20px, 4vh, 30px);
+}
+
+.primary-action {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.primary-action {
+  background: linear-gradient(135deg, #2b9dff, #11d5ff);
+  color: #ffffff;
+  border: 1px solid rgba(163, 221, 255, 0.54);
+  box-shadow: 0 14px 32px rgba(0, 163, 255, 0.26);
+}
+
+.primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 163, 255, 0.34);
+}
+
+.visual-panel {
+  position: relative;
+  height: min(68vh, 560px);
+  min-height: 360px;
+  border: 1px solid rgba(186, 205, 242, 0.14);
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035)),
+    url("../img/img4.jpeg") center / cover;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+}
+
+.visual-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 16, 31, 0.14), rgba(7, 16, 31, 0.76));
+}
+
+.glass-card {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  padding: clamp(16px, 3vh, 22px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  background: rgba(4, 12, 28, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.26);
+}
+
+.glass-card img {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.glass-card p {
+  color: #9eb5d6;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.glass-card strong {
+  display: block;
+  margin-top: 6px;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+@media (max-width: 920px) {
+  .maintenance-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 18px;
+    padding: 18px 0;
+  }
+
+  .notice {
+    align-self: start;
+  }
+
+  .brand {
+    margin-bottom: 18px;
+  }
+
+  .visual-panel {
+    align-self: end;
+    width: 100%;
+    height: clamp(150px, 28vh, 250px);
+    min-height: 0;
+    order: -1;
+  }
+
+  .notice-content h2 {
+    max-width: 760px;
+    font-size: clamp(2rem, 7.2vw, 3.5rem);
+  }
+
+  .notice-content p:last-child {
+    max-width: 760px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 560px) {
+  .maintenance-page {
+    width: min(100% - 28px, 1180px);
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .brand {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-kicker {
+    font-size: 0.66rem;
+  }
+
+  .brand h1 {
+    font-size: 1.05rem;
+  }
+
+  .status-badge {
+    margin-bottom: 12px;
+    padding: 8px 11px;
+    font-size: 0.76rem;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .notice-content h2 {
+    font-size: clamp(1.85rem, 10vw, 2.8rem);
+  }
+
+  .notice-content p:last-child {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .action-row {
+    margin-top: 16px;
+  }
+
+  .primary-action {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .visual-panel {
+    height: clamp(120px, 23vh, 170px);
+    border-radius: 14px;
+  }
+
+  .glass-card {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 12px;
+  }
+
+  .glass-card img {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 8px;
+  }
+
+  .glass-card p {
+    font-size: 0.76rem;
+  }
+
+  .glass-card strong {
+    font-size: 1.12rem;
+  }
+}
+
+@media (max-height: 680px) and (min-width: 921px) {
+  .notice-content h2 {
+    font-size: clamp(2rem, 4.5vw, 3.7rem);
+  }
+
+  .visual-panel {
+    height: calc(100svh - 44px);
+    min-height: 0;
+  }
+}
+
+@media (max-height: 620px) and (max-width: 920px) {
+  .visual-panel {
+    display: none;
+  }
+}
